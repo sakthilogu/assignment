@@ -1,22 +1,16 @@
 package facebookloginPages;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Random;
+
 
 public class Nextpage extends LoginPage {
 
 	public Nextpage enterStatus() throws FileNotFoundException, IOException, InterruptedException {
-		loadObjects();
-		
+		loadObjects();		
 		clickByXpath(prop.getProperty("home.click"));
-		Thread.sleep(500);
-		
-		//clickbyActions(prop.getProperty("copmpost.xpath"));
-		
-		
+		Thread.sleep(500);		
 		clickByXpath(prop.getProperty("status.xpath"));
-		enterbyXPath(prop.getProperty("status.xpath"), prop.getProperty("status.value")+new Random().nextInt());
+		enterbyXPath(prop.getProperty("status.xpath"), prop.getProperty("status.value"));
 		clickByXpath(prop.getProperty("clickon.post"));
 		return this;
 	}
