@@ -1,0 +1,37 @@
+package walletHubPages;
+
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class WallethubLoginPage extends GenericFunctions {
+
+	public Welcomepage signUp() {
+
+		enterbyXPath(prop.getProperty("Emailname"), prop.getProperty("email.value"));
+		//enterbyXPath(prop.getProperty("Emailname"), "testuser"+new Random().nextInt()+"@wallethub.com");
+		enterbyXPath(prop.getProperty("Password1"), prop.getProperty("pwd.value"));
+		enterbyXPath(prop.getProperty("Confirm.password"), prop.getProperty("pwd2.value"));
+		clickByXpath(prop.getProperty("check.box.clickxpath"));
+		clickByXpath(prop.getProperty("join.button.clickxpath"));
+
+		return new Welcomepage();
+	}
+
+	public Welcomepage login() throws InterruptedException {
+		//driver.findElement(By.xpath(prop.getProperty("email.add"))).clear();
+		if(driver.findElement(By.xpath(prop.getProperty("email.add"))).isEnabled())
+		{
+		enterbyXPath(prop.getProperty("email.add"), prop.getProperty("emailad.value"));
+		}
+		enterbyXPath(prop.getProperty("password"), prop.getProperty("password.value"));
+		Thread.sleep(800);
+		clickbyActions(prop.getProperty("login.buttonn"));
+
+		return new Welcomepage();
+	}
+
+}
