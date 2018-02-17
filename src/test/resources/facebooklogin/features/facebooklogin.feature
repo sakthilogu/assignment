@@ -1,9 +1,8 @@
-Feature:Facebook Login Testing
+Feature:Facebook Login and status update
 Scenario:Facebook Login
-Given facebook url opened
-Then enter username and password
-
+Given Open facebook Url
+When Url opened enter username and password proceed to login
 
 Scenario:Facebook Logout
-And click logout
-Then close browser
+And Enter facebook status and click logout
+Then finally close the browser
