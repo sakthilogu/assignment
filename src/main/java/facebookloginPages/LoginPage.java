@@ -1,7 +1,4 @@
 package facebookloginPages;
-
-import org.openqa.selenium.By;
-
 public class LoginPage extends GenericCalls {
 
 	public Nextpage login() {
