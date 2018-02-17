@@ -10,23 +10,22 @@ import facebookloginPages.Nextpage;
 
 public class FacebookloginStepdef extends Nextpage {
 
-	@Given("^facebook url opened$")
+	@Given("^Open facebook Url$")
 	public void launchlogin() throws FileNotFoundException, IOException {
 		launchBrowserr();
 
 	}
 
-	@Then("^enter username and password$")
+	@when("^Url opened enter username and password proceed to login$")
 	public void logintoapplication() {
 		try {
-
 			login();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	@And("^click logout$")
+	@And("^Enter facebook status and click logout$")
 	public void logoutapp() {
 		try {
 			 enterStatus();
@@ -39,7 +38,7 @@ public class FacebookloginStepdef extends Nextpage {
 		}
 	}
 
-	@Then("^close browser$")
+	@Then("^finally close the browser$")
 	public void closebrowser() {
 		driver.quit();
 	}
