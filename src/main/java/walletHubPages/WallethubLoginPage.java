@@ -12,7 +12,6 @@ public class WallethubLoginPage extends GenericFunctions {
 	public Welcomepage signUp() {
 
 		enterbyXPath(prop.getProperty("Emailname"), prop.getProperty("email.value"));
-		//enterbyXPath(prop.getProperty("Emailname"), "testuser"+new Random().nextInt()+"@wallethub.com");
 		enterbyXPath(prop.getProperty("Password1"), prop.getProperty("pwd.value"));
 		enterbyXPath(prop.getProperty("Confirm.password"), prop.getProperty("pwd2.value"));
 		clickByXpath(prop.getProperty("check.box.clickxpath"));
@@ -22,7 +21,6 @@ public class WallethubLoginPage extends GenericFunctions {
 	}
 
 	public Welcomepage login() throws InterruptedException {
-		//driver.findElement(By.xpath(prop.getProperty("email.add"))).clear();
 		if(driver.findElement(By.xpath(prop.getProperty("email.add"))).isEnabled())
 		{
 		enterbyXPath(prop.getProperty("email.add"), prop.getProperty("emailad.value"));
